@@ -1,7 +1,11 @@
+import { useState } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 
+
+
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
       <div className="top-bar">
@@ -30,7 +34,14 @@ export default function Navbar() {
             <h2>Makan Mate</h2>
           </div>
 
-          <ul className="nav-links">
+          <button
+  className="menu-toggle"
+  onClick={() => setMenuOpen(!menuOpen)}
+>
+  {menuOpen ? "✕" : "☰"}
+</button>
+
+          <ul className={`nav-links ${menuOpen ? "show-menu" : ""}`}>
             <li>
               <NavLink
                 to="/"

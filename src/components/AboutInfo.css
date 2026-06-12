@@ -16,6 +16,7 @@
 .about-image-wrapper {
   position: relative;
   width: 430px;
+  flex-shrink: 0;
 }
 
 .about-image {
@@ -79,4 +80,95 @@
   padding: 12px 26px;
   border-radius: 40px;
   cursor: pointer;
+}
+
+/* ── Tablet (image gets narrower, gap shrinks) ── */
+@media (max-width: 1024px) {
+  .about-container {
+    gap: 60px;
+  }
+
+  .about-image-wrapper {
+    width: 360px;
+  }
+
+  .about-content h2 {
+    font-size: 38px;
+  }
+}
+
+/* ── Small tablet / large phone landscape ── */
+@media (max-width: 860px) {
+  .about-container {
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  /* Image wrapper becomes full-width and gets bottom
+     padding so the overlapping card doesn't get clipped */
+  .about-image-wrapper {
+    width: 100%;
+    padding-bottom: 60px;
+  }
+
+  .about-image {
+    height: 340px;
+  }
+
+  /* Re-anchor card so it stays visible below the image */
+  .contact-card {
+    right: 0;
+    bottom: 0;
+  }
+
+  .about-content {
+    padding-top: 24px;
+  }
+
+  .about-content h2 {
+    font-size: 34px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .about {
+    padding: 56px 0;
+  }
+
+  .about-image {
+    height: 260px;
+  }
+
+  /* Card is wide enough to cause horizontal scroll at -35px;
+     pull it back inside the wrapper */
+  .contact-card {
+    width: calc(100% - 0px);
+    right: 0;
+    left: 0;
+    border-radius: 0 0 12px 12px;
+    position: relative;
+    bottom: auto;
+  }
+
+  /* Remove the padding-bottom hack — card is now in flow */
+  .about-image-wrapper {
+    padding-bottom: 0;
+  }
+
+  .about-content h2 {
+    font-size: 28px;
+  }
+}
+
+/* ── Very small phones ── */
+@media (max-width: 380px) {
+  .about-content h2 {
+    font-size: 24px;
+  }
+
+  .contact-card {
+    padding: 18px;
+  }
 }

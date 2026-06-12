@@ -1,3 +1,4 @@
+/* ── Base ── */
 .footer {
   background: #474747;
   color: white;
@@ -8,14 +9,12 @@
   width: 1100px;
   max-width: 92%;
   margin: auto;
-
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
   gap: 50px;
 }
 
 /* Brand */
-
 .footer-brand h2 {
   font-size: 32px;
   margin-bottom: 18px;
@@ -30,7 +29,6 @@
 }
 
 /* Social */
-
 .social-icons {
   display: flex;
   gap: 12px;
@@ -39,16 +37,12 @@
 .social-icons a {
   width: 36px;
   height: 36px;
-
   background: #c94e2d;
   color: white;
-
   border-radius: 50%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-decoration: none;
   transition: 0.3s;
 }
@@ -58,7 +52,6 @@
 }
 
 /* Links */
-
 .footer-links h3,
 .footer-instagram h3 {
   margin-bottom: 20px;
@@ -67,6 +60,8 @@
 
 .footer-links ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-links li {
@@ -85,7 +80,6 @@
 }
 
 /* Instagram */
-
 .instagram-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -100,7 +94,6 @@
 }
 
 /* Copyright */
-
 .copyright {
   text-align: center;
   margin-top: 60px;
@@ -110,12 +103,38 @@
   font-size: 14px;
 }
 
-/* Responsive */
+/* ── Tablet: 2 columns ── */
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
 
+  /* Brand spans full width on its own row */
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  /* Instagram also full width so the 2×2 grid has room */
+  .footer-instagram {
+    grid-column: 1 / -1;
+  }
+
+  /* Spread the 4 photos in a row when there's horizontal space */
+  .instagram-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .instagram-grid img {
+    height: 110px;
+  }
+}
+
+/* ── Small tablet / large phone ── */
 @media (max-width: 768px) {
   .footer-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
 
   .footer-brand,
@@ -126,5 +145,49 @@
 
   .social-icons {
     justify-content: center;
+  }
+
+  /* Keep instagram full-width and 4-across */
+  .footer-instagram {
+    grid-column: 1 / -1;
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .footer {
+    padding-top: 56px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Reset all column spans for single-column flow */
+  .footer-brand,
+  .footer-instagram {
+    grid-column: auto;
+  }
+
+  /* Back to 2×2 — 4-across is too small on a narrow phone */
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .instagram-grid img {
+    height: 95px;
+  }
+
+  .footer-brand h2 {
+    font-size: 26px;
+  }
+
+  .copyright {
+    margin-top: 40px;
   }
 }

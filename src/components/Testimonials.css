@@ -1,6 +1,6 @@
 .testimonials {
   background: #f9f9f7;
-  padding: 90px 0;
+  padding: 45px 0;
 }
 
 .testimonials .container {
@@ -66,12 +66,64 @@
   color: #888;
 }
 
-@media (max-width: 768px) {
+/* ── Tablet: 2 columns ── */
+@media (max-width: 1024px) {
+  .testimonials h2 {
+    font-size: 38px;
+  }
+
   .testimonial-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Last card spans full width so it doesn't sit alone half-width */
+  .testimonial-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 560px;
+    justify-self: center;
+    width: 100%;
+  }
+}
+
+/* ── Small tablet / large phone ── */
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 60px 0;
   }
 
   .testimonials h2 {
     font-size: 34px;
+    margin-bottom: 36px;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reset the last-child override from the 1024px rule */
+  .testimonial-card:last-child {
+    grid-column: auto;
+    max-width: 100%;
+    justify-self: auto;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .testimonials {
+    padding: 48px 0;
+  }
+
+  .testimonials h2 {
+    font-size: 28px;
+    margin-bottom: 28px;
+  }
+
+  .testimonial-card {
+    padding: 24px 20px;
+  }
+
+  .testimonial-card h3 {
+    font-size: 17px;
   }
 }
