@@ -1,0 +1,214 @@
+.about-page {
+  width: 100%;
+}
+
+.about-hero {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.contact-card {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  background: #ad343e;
+  color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 260px;
+}
+
+.contact-card h3 {
+  margin-bottom: 15px;
+}
+
+.contact-card p {
+  margin-bottom: 10px;
+}
+
+.about-content h1,
+.story-content h2,
+.why-section h2,
+.team-section h2 {
+  font-family: "Playfair Display", serif;
+  color: #2c2c2c;
+}
+
+.about-content h1 {
+  font-size: 52px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  color: #737373;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-content button {
+  border: 2px solid #ad343e;
+  color: #ad343e;
+  background: transparent;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.story-section {
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.story-section img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.story-content h2 {
+  font-size: 46px;
+  margin-bottom: 20px;
+}
+
+.story-content p {
+  color: #737373;
+  line-height: 1.8;
+}
+
+.stats-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.stat-card {
+  text-align: center;
+  border: 1px solid #e4e4e4;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.stat-card h3 {
+  font-size: 42px;
+  color: #ad343e;
+}
+
+.why-section {
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 20px;
+}
+
+.why-section h2 {
+  text-align: center;
+  font-size: 46px;
+  margin-bottom: 50px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.why-card {
+  border: 1px solid #e4e4e4;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.team-section {
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 20px;
+}
+
+.team-section h2 {
+  text-align: center;
+  font-size: 46px;
+  margin-bottom: 50px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.chef-card {
+  text-align: center;
+}
+
+.chef-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.chef-card h3 {
+  margin-top: 20px;
+  color: #2c2c2c;
+}
+
+.chef-card p {
+  color: #737373;
+}
+
+@media (max-width: 992px) {
+  .about-hero,
+  .story-section {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-section,
+  .why-grid,
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-card {
+    position: static;
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-section,
+  .why-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content h1,
+  .story-content h2,
+  .why-section h2,
+  .team-section h2 {
+    font-size: 36px;
+  }
+}
