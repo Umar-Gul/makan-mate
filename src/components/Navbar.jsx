@@ -1,11 +1,14 @@
 import { useState } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa6";
 
 
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
   return (
     <>
       <div className="top-bar">
@@ -16,10 +19,40 @@ export default function Navbar() {
           </div>
 
           <div className="social-icons">
-            <a href="#">𝕏</a>
-            <a href="#">f</a>
-            <a href="#">in</a>
-            <a href="#">📷</a>
+            <a
+              href="https://x.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaXTwitter />
+            </a>
+
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FaFacebookF />
+            </a>
+
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedinIn />
+            </a>
+
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </a>
           </div>
         </div>
       </div>
@@ -33,14 +66,12 @@ export default function Navbar() {
             />
             <h2>Makan Mate</h2>
           </div>
-
           <button
-  className="menu-toggle"
-  onClick={() => setMenuOpen(!menuOpen)}
->
-  {menuOpen ? "✕" : "☰"}
-</button>
-
+            className="menu-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? "✕" : "☰"}
+          </button>
           <ul className={`nav-links ${menuOpen ? "show-menu" : ""}`}>
             <li>
               <NavLink
@@ -87,8 +118,9 @@ export default function Navbar() {
               </NavLink>
             </li>
           </ul>
-
-          <button className="order-btn">Order Now</button>
+          <button className="order-btn" onClick={() => navigate("/menu")}>
+            Order Now
+          </button>{" "}
         </div>
       </nav>
     </>

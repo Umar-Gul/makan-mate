@@ -64,12 +64,25 @@ export default function About() {
             alt="Restaurant Food"
           />
 
-          <div className="contact-card">
+           <div className="contact-card">
             <h3>Come and visit us</h3>
 
-            <p>📞 (414) 857 - 0107</p>
-            <p>✉️ makanmate@email.com</p>
-            <p>📍 Peshawar, Pakistan</p>
+            <div className="contact-item">
+              <span>📞</span>
+              <a href="tel:+14148570107">(414) 857 - 0107</a>
+            </div>
+
+            <div className="contact-item">
+              <span>✉️</span>
+              <a href="mailto:engrumargul@gmail.com">happytummy@restaurant.com</a>
+            </div>
+
+            <div className="contact-item">
+              <span>📍</span>
+              <a href="https://maps.google.com/?q=837+W.+Marshall+Lane+Marshalltown,+IA+50158" target="_blank" rel="noopener noreferrer">
+                837 W. Marshall Lane Marshalltown, IA 50158
+              </a>
+            </div>
           </div>
         </div>
 
@@ -88,7 +101,6 @@ export default function About() {
             every guest.
           </p>
 
-          <button>More About Us</button>
         </div>
       </section>
 

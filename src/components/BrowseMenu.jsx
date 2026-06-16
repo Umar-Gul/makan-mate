@@ -1,6 +1,8 @@
 import "./BrowseMenu.css";
+import { useNavigate } from "react-router-dom";
 
 export default function BrowseMenu() {
+  const navigate = useNavigate();
   const categories = [
     {
       title: "Breakfast",
@@ -37,9 +39,9 @@ export default function BrowseMenu() {
 
             <p>{item.desc}</p>
 
-            <a href="#" className="menu-link">
+            <button className="menu-link" onClick={() => navigate("/menu")}>
               Explore Menu
-            </a>
+            </button>
           </div>
         ))}
       </div>

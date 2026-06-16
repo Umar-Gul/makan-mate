@@ -1,6 +1,14 @@
 import "./Footer.css";
+import { useNavigate } from "react-router-dom";
+import {
+  FaFacebookF,
+  FaXTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+} from "react-icons/fa6";
 
 export default function Footer() {
+  const navigate = useNavigate();
   const instagramImages = [
     "https://images.unsplash.com/photo-1546069901-ba9599a7e63c",
     "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
@@ -10,23 +18,44 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-
       <div className="footer-container">
-
         {/* Brand */}
         <div className="footer-brand">
           <h2>Makan Mate</h2>
 
           <p>
-            In the new era of technology we look in the future with
-            certainty and pride for our company and customers.
+            In the new era of technology we look in the future with certainty
+            and pride for our company and customers.
           </p>
 
           <div className="social-icons">
-            <a href="#">f</a>
-            <a href="#">𝕏</a>
-            <a href="#">in</a>
-            <a href="#">📷</a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF />
+            </a>
+
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer">
+              <FaXTwitter />
+            </a>
+
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedinIn />
+            </a>
+
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
           </div>
         </div>
 
@@ -35,13 +64,27 @@ export default function Footer() {
           <h3>Pages</h3>
 
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Delivery</a></li>
+            <li>
+              <button onClick={() => navigate("/")}>Home</button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/about")}>About</button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/menu")}>Menu</button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/pricing")}>Pricing</button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/blog")}>Blog</button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/contact")}>Contact</button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/delivery")}>Delivery</button>
+            </li>
           </ul>
         </div>
 
@@ -50,13 +93,39 @@ export default function Footer() {
           <h3>Utility Pages</h3>
 
           <ul>
-            <li><a href="#">Start Here</a></li>
-            <li><a href="#">Styleguide</a></li>
-            <li><a href="#">Password Protected</a></li>
-            <li><a href="#">404 Not Found</a></li>
-            <li><a href="#">Licenses</a></li>
-            <li><a href="#">Changelog</a></li>
-            <li><a href="#">View More</a></li>
+            <li>
+              <button onClick={() => navigate("/start-here")}>
+                Start Here
+              </button>
+            </li>
+
+            <li>
+              <button onClick={() => navigate("/styleguide")}>
+                Styleguide
+              </button>
+            </li>
+
+            <li>
+              <button onClick={() => navigate("/password-protected")}>
+                Password Protected
+              </button>
+            </li>
+
+            <li>
+              <button onClick={() => navigate("/404")}>404 Not Found</button>
+            </li>
+
+            <li>
+              <button onClick={() => navigate("/licenses")}>Licenses</button>
+            </li>
+
+            <li>
+              <button onClick={() => navigate("/changelog")}>Changelog</button>
+            </li>
+
+            <li>
+              <button onClick={() => navigate("/view-more")}>View More</button>
+            </li>
           </ul>
         </div>
 
@@ -66,15 +135,10 @@ export default function Footer() {
 
           <div className="instagram-grid">
             {instagramImages.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt="Food"
-              />
+              <img key={index} src={img} alt="Food" />
             ))}
           </div>
         </div>
-
       </div>
 
       {/* Copyright */}
@@ -82,7 +146,6 @@ export default function Footer() {
       <div className="copyright">
         Copyright © 2025 Makan Mate. All Rights Reserved
       </div>
-
     </footer>
   );
 }

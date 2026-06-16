@@ -1,6 +1,9 @@
 import "./AboutInfo.css";
+import { useNavigate } from "react-router-dom"; 
+
 
 export default function AboutInfo() {
+  const navigate = useNavigate();
   return (
     <section className="about">
       <div className="about-container">
@@ -18,17 +21,19 @@ export default function AboutInfo() {
 
             <div className="contact-item">
               <span>📞</span>
-              <p>(414) 857 - 0107</p>
+              <a href="tel:+14148570107">(414) 857 - 0107</a>
             </div>
 
             <div className="contact-item">
               <span>✉️</span>
-              <p>happytummy@restaurant.com</p>
+              <a href="mailto:happytummy@restaurant.com">happytummy@restaurant.com</a>
             </div>
 
             <div className="contact-item">
               <span>📍</span>
-              <p>837 W. Marshall Lane Marshalltown, IA 50158</p>
+              <a href="https://maps.google.com/?q=837+W.+Marshall+Lane+Marshalltown,+IA+50158" target="_blank" rel="noopener noreferrer">
+                837 W. Marshall Lane Marshalltown, IA 50158
+              </a>
             </div>
           </div>
 
@@ -52,7 +57,9 @@ export default function AboutInfo() {
             every visit an unforgettable event.
           </p>
 
-          <button>More About Us</button>
+          <button onClick={() => navigate("/about")}>
+            More About Us
+          </button>
         </div>
 
       </div>
