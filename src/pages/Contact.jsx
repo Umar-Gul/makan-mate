@@ -1,5 +1,6 @@
 import "./Contact.css";
 import { useState } from "react";
+import ContactInfoBar from "../components/ContactInfoBar";
 
 import {
   FaFacebookF,
@@ -34,34 +35,8 @@ export default function Contact() {
         </p>
       </section>
 
-      {/* Contact Cards */}
-      <section className="contact-info-bar">
-        <div className="container contact-info-grid">
-          <div className="info-card">
-            <h4>Phone</h4>
-            <h3>(414) 857 - 0107</h3>
-            <p>Mon–Sat, 9am – 10pm</p>
-          </div>
-
-          <div className="info-card">
-            <h4>Email</h4>
-            <h3>hello@makanmate.com</h3>
-            <p>Response within 24 hours</p>
-          </div>
-
-          <div className="info-card">
-            <h4>Address</h4>
-            <h3>837 W. Marshall Lane</h3>
-            <p>Marshalltown, IA 50158</p>
-          </div>
-
-          <div className="info-card">
-            <h4>Hours</h4>
-            <h3>Mon – Sun</h3>
-            <p>11:00 AM – 11:00 PM</p>
-          </div>
-        </div>
-      </section>
+      {/* Contact Info Bar */}
+      <ContactInfoBar />
 
       {/* Stats */}
       <section className="contact-stats container">
@@ -92,7 +67,9 @@ export default function Contact() {
           <h2>Send Us A Message</h2>
 
           {submitted && (
-            <div className="success-message">Message sent successfully!</div>
+            <div className="success-message">
+              Message sent successfully!
+            </div>
           )}
 
           <form onSubmit={handleSubmit}>
@@ -110,7 +87,10 @@ export default function Contact() {
               </select>
             </div>
 
-            <textarea placeholder="Write your message..." rows="6"></textarea>
+            <textarea
+              placeholder="Write your message..."
+              rows="6"
+            ></textarea>
 
             <button type="submit">Send Message</button>
           </form>

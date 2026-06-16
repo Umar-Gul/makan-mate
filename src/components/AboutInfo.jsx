@@ -1,10 +1,13 @@
 import "./AboutInfo.css";
 import { useNavigate } from "react-router-dom"; 
+import ContactInfoBar from "./ContactInfoBar";
 
 
 export default function AboutInfo() {
   const navigate = useNavigate();
   return (
+    <>
+    <ContactInfoBar />
     <section className="about">
       <div className="about-container">
 
@@ -64,5 +67,6 @@ export default function AboutInfo() {
 
       </div>
     </section>
+    </>
   );
 }

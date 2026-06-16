@@ -2,7 +2,8 @@ import { useState } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa6";
+// import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa6";
+import TopBar from "./TopBar";
 
 
 
@@ -11,7 +12,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="top-bar">
+      {/* <div className="top-bar">
         <div className="container">
           <div className="contact-info">
             <span>📞 (414) 857 - 0107</span>
@@ -55,7 +56,9 @@ export default function Navbar() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <TopBar />
 
       <nav className="navbar">
         <div className="container nav-content">
